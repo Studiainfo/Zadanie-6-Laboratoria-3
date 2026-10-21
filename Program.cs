@@ -1,4 +1,6 @@
-﻿Console.Write("Imie Bohatera:");
+﻿using System.Net;
+
+Console.Write("Imie Bohatera:");
 string bohater1 = Console.ReadLine()!;
 
 Console.Write("Klasa:");
@@ -15,6 +17,7 @@ int sila1 =int.Parse(wpisanaLiczba2);
 Console.Write("Ile masz złota:");
 string wpisanaLiczba3 = Console.ReadLine()!;
 decimal zloto1 = decimal.Parse(wpisanaLiczba3);
+
 
 const int maxZdrowie = 100;
 double procentZdrowia = (double)hp1/maxZdrowie*100;
@@ -39,6 +42,40 @@ int podatek = 5;
 zloto1 += premia;
 zloto1 -= podatek;
 
+string statusZdrowia;
+if (hp1<=0)
+{
+    statusZdrowia = "Martwy";
+}
+else if (hp1<=50)
+{
+    statusZdrowia = "Ranny";
+}
+else
+{
+    statusZdrowia = "Zdrowy";
+}
+
+string bogactwo;
+if (zloto1 > 50)
+{
+    bogactwo = "Tak";
+}
+else
+{
+    bogactwo = "Nie";
+}
+
+ string gotowaDoWalki;
+ if (hp1>0 && sila1>20)
+{
+    gotowaDoWalki = "Tak";
+}
+else
+{
+    gotowaDoWalki = "Nie";
+}
+
 
 
 
@@ -49,7 +86,7 @@ Console.WriteLine("+================================+");
 Console.WriteLine($"| Bohater:\t{bohater1}\t\t |");
 Console.WriteLine($"| Klasa:\t{klasa1}\t |");
 Console.WriteLine("+================================+");
-Console.WriteLine($"| HP:\t\t{hp1}/{maxZdrowie} ({procentZdrowia:F2}%)\t |");
+Console.WriteLine($"| HP:\t\t{hp1}/{maxZdrowie} ({procentZdrowia:F2}%)|");
 Console.WriteLine($"| Siła:\t\t{sila1}\t\t |");
 Console.WriteLine($"| Złoto:\t{zloto1}\t\t |");
 Console.WriteLine("+================================+");
@@ -65,8 +102,28 @@ Console.WriteLine($"| Wymagane leczenie: {chceLeczenia}\t |");
 Console.WriteLine($"| Miejsce w plecaku: {miejscePlecak}\t |");
 Console.WriteLine($"| Gotowy: {gotowyDoWyprawy}\t\t\t |");
 Console.WriteLine("+================================+");
+Console.WriteLine($"| Poziom zdrowia: \t{statusZdrowia}\t |");
+Console.WriteLine($"| Czy postac jest bogata: \t{bogactwo} |");
+Console.WriteLine($"| Gotowa do walki: \t{gotowaDoWalki}");
 
+Console.WriteLine("Wybierz opcje: 1 - Sprawdz zdrowie, 2 - otwórz mape, 3 - zakończ gre");
+int opcja = int.Parse(Console.ReadLine()!);
 
+switch (opcja)
+{
+    case 1:
+    Console.WriteLine($"Zdrowie:{hp1}");
+    break;
+    case 2:
+    Console.WriteLine("Mapa otwarta");
+    break;
+    case 3:
+    Console.WriteLine("Gra zakończona");
+    break;
+    default:
+    Console.WriteLine("Nie ma takiej opcji");
+    break;
+}
 
 
 

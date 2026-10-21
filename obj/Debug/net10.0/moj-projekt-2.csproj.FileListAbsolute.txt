@@ -12,3 +12,4 @@ C:\Projekty\moj-projekt-2\obj\Debug\net10.0\refint\moj-projekt-2.dll
 C:\Projekty\moj-projekt-2\obj\Debug\net10.0\moj-projekt-2.pdb
 C:\Projekty\moj-projekt-2\obj\Debug\net10.0\moj-projekt-2.genruntimeconfig.cache
 C:\Projekty\moj-projekt-2\obj\Debug\net10.0\ref\moj-projekt-2.dll
+C:\Projekty\moj-projekt-2\obj\Debug\net10.0\moj-projekt-2.sourcelink.json
